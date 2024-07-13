@@ -24,37 +24,29 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: 80%;
         }
 
         h1 {
             margin-bottom: 20px;
         }
 
-        form {
-            display: flex;
-            justify-content: center;
+        #userIpContainer {
             margin-bottom: 20px;
         }
 
-        input[type="text"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 70%;
-            margin-right: 10px;
+        .ad-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #2575fc;
-            color: #fff;
-            cursor: pointer;
+        .ad-left {
+            left: 0;
         }
 
-        button:hover {
-            background-color: #6a11cb;
+        .ad-right {
+            right: 0;
         }
 
         #result {
@@ -69,11 +61,21 @@
     </style>
 </head>
 <body>
+    <div class="ad-container ad-left">
+        <script src="//static.surfe.pro/js/net.js"></script>
+        <ins class="surfe-be" data-sid="398199"></ins>
+        <script>(adsurfebe = window.adsurfebe || []).push({});</script>
+    </div>
     <div class="container">
         <h1>Your IP Address</h1>
         <div id="userIpContainer">
             <h3><span id="userIp"></span></h3>
         </div>
+    </div>
+    <div class="ad-container ad-right">
+        <script src="//static.surfe.pro/js/net.js"></script>
+        <ins class="surfe-be" data-sid="398198"></ins>
+        <script>(adsurfebe = window.adsurfebe || []).push({});</script>
     </div>
 
     <script>
@@ -88,23 +90,6 @@
                 .catch(error => {
                     console.error('Error fetching user IP address:', error);
                 });
-
-            // Handle form submission
-            document.getElementById('ipForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const ip = document.getElementById('ipInput').value;
-                fetch(`https://ipapi.co/${ip}/json/`)
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('ip').textContent = data.ip;
-                        document.getElementById('location').textContent = `${data.city}, ${data.region}, ${data.country_name}`;
-                        document.getElementById('isp').textContent = data.org;
-                        document.getElementById('result').classList.remove('hidden');
-                    })
-                    .catch(error => {
-                        alert('Invalid IP address or network error.');
-                    });
-            });
         });
     </script>
 </body>
