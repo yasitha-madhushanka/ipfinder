@@ -16,6 +16,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            position: relative;
         }
 
         .container {
@@ -25,7 +26,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 60%;
-            
         }
 
         h1 {
@@ -36,20 +36,19 @@
             margin-bottom: 20px;
         }
 
-        .ad-container-left {
+        .ad-container-top {
             position: absolute;
-            top: 0%;
-            transform: translateY(0%);
-            left: 0;
-        }
-        .ad-container-right {
-            position: absolute;
-            bottom: 0%;
-            transform: translateY(100%);
-            right: 0;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
         }
 
-       
+        .ad-container-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 100%);
+        }
 
         #result {
             background: rgba(255, 255, 255, 0.2);
@@ -63,7 +62,7 @@
     </style>
 </head>
 <body>
-    <div class="ad-container-left">
+    <div class="ad-container-top">
         <script src="//static.surfe.pro/js/net.js"></script>
         <ins class="surfe-be" data-sid="398199"></ins>
         <script>(adsurfebe = window.adsurfebe || []).push({});</script>
@@ -74,7 +73,7 @@
             <h3><span id="userIp"></span></h3>
         </div>
     </div>
-    <div class="ad-container-right">
+    <div class="ad-container-bottom">
         <script src="//static.surfe.pro/js/net.js"></script>
         <ins class="surfe-be" data-sid="398198"></ins>
         <script>(adsurfebe = window.adsurfebe || []).push({});</script>
